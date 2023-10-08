@@ -14,20 +14,31 @@ function App() {
       
           {/* // <Planet name="Earth" isGasPlanet={true} />
           // <Planet props={planet}/> */}
-        <DisplayAllPlanets props={planets}/>
-      
+        {/* <DisplayAllPlanets props={planets}/> */}
+      <Child name="Arjun" dept="CSE"/>
+      <Student name="Deva" dept="CSBS"/>
 </div>
   )
 }
 function DisplayAllPlanets({ props }) {
+  console.log("Prps",props)
   return props.map((prop) => (
     <Planet name={prop.name} isGasPlanet={prop.isGasPlanet} />
   ));
 }
 
+function Child({name,dept}){
+console.log(name,dept);
+}
+
+function Student({name}){
+  console.log(name);
+
+}
+
 
 function Planet(props){
-  console.log(props)
+  console.log(props);
   return (
     props.isGasPlanet &&
     <div>
